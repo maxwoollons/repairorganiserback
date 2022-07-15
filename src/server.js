@@ -44,11 +44,7 @@ app.use('/api/login', loginController)
 
 
 
-
-https.createServer({
-    key: fs.readFileSync('back/src/privkey.pem'),
-    cert: fs.readFileSync('fullchain.pem')
-}, app).listen(port, () => {
+app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 }
 );
