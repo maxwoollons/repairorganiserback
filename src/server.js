@@ -40,7 +40,7 @@ app.use(session({
 app.use(express.json());
 
 
-const port = 8000;
+const port = 3000;
 
 app.use('/api/repairs', repairController)
 app.use('/api/login', loginController)
@@ -56,7 +56,7 @@ const sslserver = https.createServer({
 }, app);
 
 
-sslserver.listen(process.env.PORT || 3000, () => {
+sslserver.listen(port, () => {
 
     console.log(`Server running on port ${port}`);
 }
