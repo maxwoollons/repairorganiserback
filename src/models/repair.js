@@ -8,7 +8,7 @@ export function allRepairs(){
 
 export function archivedRepairs(){
     console.log("all orders")
-    return db_conn.query("SELECT *,DATE_FORMAT(requiredby,'%d/%m/%y') as Date,DATE_FORMAT(requiredby,'%y-%m-%d') as CalDate FROM repair.repairs WHERE archived = 1 ORDER BY requiredby ASC ;")
+    return db_conn.query("SELECT *,DATE_FORMAT(requiredby,'%d/%m/%y') as Date,DATE_FORMAT(requiredby,'%y-%m-%d') as CalDate FROM repair.repairs WHERE archived = 1 ORDER BY requiredby DESC ;")
 }
 
 
