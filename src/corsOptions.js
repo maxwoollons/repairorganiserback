@@ -1,5 +1,5 @@
 // const allowedOrigins = ['http://localhost:3000'];
-const allowedOrigins = ['http://jbrepair.xyz','http://localhost:3000'];
+const allowedOrigins = ['https://jbrepair.xyz',"http://jbrepair.xyz",'http://localhost:3000'];
 
 
 const corsOptions = {
