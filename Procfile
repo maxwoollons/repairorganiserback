@@ -1,1 +1,1 @@
-web: npm start
+echo "web: node server.js" > Procfile

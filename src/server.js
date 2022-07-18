@@ -7,6 +7,11 @@ import corsOptions from './corsOptions.js';
 import loginController from './controllers/login.js';
 import https from 'http';
 import fs from 'fs';
+import path from "path";
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 
@@ -44,7 +49,15 @@ app.use('/api/login', loginController)
 
 
 
-app.listen(port, () => {
+
+const sslserver = https.createServer({
+    key: fs.readFileSync(path.join(__dirname, 'privkey.pem')),
+    cert: fs.readFileSync(path.join(__dirname, 'fullchain.pem'))
+}, app);
+
+
+sslserver.listen(process.env.PORT || 3000, () => {
+
     console.log(`Server running on port ${port}`);
 }
 );
