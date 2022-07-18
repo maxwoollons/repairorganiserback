@@ -36,7 +36,7 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    cookie: {sameSite: 'none',secure:true, path: '/'}
+    cookie: {sameSite: 'none',secure:true}
     
     }));
 app.use(express.json());
